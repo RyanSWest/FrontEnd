@@ -11,11 +11,12 @@ class TGregister extends React.Component{
         };
     }
     
-     addGuide = user =>{  
+     addGuide = e =>{  
+        e.preventDefault();
     axios
-    .post('https://wanderlust-api.herokuapp.com/auth/guide/register', user)
+    .post('https://wanderlust-api.herokuapp.com/auth/guide/register', this.state)
     .then( res => {  localStorage.setItem('token',res.data.token)
-    console.log("HAY", user)
+    console.log("HAY", this.state)
 
     }
 
@@ -57,7 +58,7 @@ class TGregister extends React.Component{
                
                
 
-               <button className ='regSubmit' onClick ={this.addGuide(this.state)}>SUBMIT</button>
+               <button className ='regSubmit' onClick ={this.addGuide}>SUBMIT</button>
 
 
             </form>
