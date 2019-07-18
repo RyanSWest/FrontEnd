@@ -12,7 +12,7 @@ class Register extends React.Component{
         };
     }
     
-    changeHandle =e =>({[e.target.name]: e.target.value})
+    changeHandle =e =>  this.setState({ [e.target.name]: e.target.value });
 
     // regSubmit = e => {
     //     const firstName = this.state.firstName;
@@ -69,7 +69,7 @@ class Register extends React.Component{
             type= 'submit'>
             <input
                type ='text'
-               name ='userName'
+               name ='username'
                placeholder = 'userName'
                value={this.state.userName}
                onChange={this.changeHandle}/> 
